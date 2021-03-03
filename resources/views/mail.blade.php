@@ -9,6 +9,6 @@
 </head>
 <body>
     <p>Bonjour {{ $email }} votre réservation pour le {{ $date }} à {{ $time }} est confirmée.</p>
-    <a href="">Annuler la réservation</a>
+    <a href="https://gym-affluences.herokuapp.com/cancel/<?=$token?>">Annuler la réservation</a>
 </body>
 </html>
