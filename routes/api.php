@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/reservation', [\App\Http\Controllers\Api::class, 'reservation'])->name('api.reservation');
+
+Route::post('/reservation', [\App\Http\Controllers\Api::class, 'reservation'])->name('api.reservation');
+
+Route::get('/cancel/{token}', [\App\Http\Controllers\Api::class, 'cancel'])->name('api.cancel');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
