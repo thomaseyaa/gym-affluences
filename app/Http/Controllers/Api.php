@@ -10,7 +10,12 @@ use Illuminate\Support\Facades\Mail;
 
 class Api extends Controller
 {
-    public function reservation(\App\Http\Requests\Request $request){
+    public function infos(){
+        $infos = Config::get('information');
+        return $infos;
+    }
+
+    public function reservation($request){
         $data = $request->all();
         $data['token'] = md5(uniqid(true));
 

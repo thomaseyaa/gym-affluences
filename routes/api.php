@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/reservation', [\App\Http\Controllers\Api::class, 'reservation'])->name('api.reservation');
+Route::get('/infos', [\App\Http\Controllers\Api::class, 'infos'])->name('api./infos');
 
 Route::post('/reservation', [\App\Http\Controllers\Api::class, 'reservation'])->name('api.reservation');
 
