@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Mail;
 class Api extends Controller
 {
     public function infos(){
-        $infos = Config::get('information');
-        return $infos;
+        $infos = Informations::Restrictions();
+        return response()->json($infos);
     }
 
     public function reservation($request){

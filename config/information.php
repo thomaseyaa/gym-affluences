@@ -3,7 +3,7 @@
 namespace Config;
 
 class Informations {
-    public function Restrictions(){
+    public static function Restrictions(){
        return [
            'days' => ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
            'offDays' => ['Sat', 'Sun'],
