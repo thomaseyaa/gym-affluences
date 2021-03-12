@@ -15,7 +15,7 @@ class Api extends Controller
         return response()->json($infos);
     }
 
-    public function reservation($request){
+    public function reservation(Request $request){
         $data = $request->all();
         $data['token'] = md5(uniqid(true));
 
@@ -44,11 +44,11 @@ class Api extends Controller
         ]);
 
         Mail::to($data['email'])->send(new Confirmation($data));
-        return response()->json(['error' => "Félicitation, votre réservation a été éffectué avec succès!"], 200);
+        return response()->json(['success' => "Félicitation, votre réservation a été éffectué avec succès!"], 200);
     }
 
     public function cancel($token){
         DB::table('reservations')->where('token', $token)->delete();
-        return response()->json(['error' => "Félicitation, votre réservation a été annulé!"], 200);
+        return response()->json(['success' => "Félicitation, votre réservation a été annulé!"], 200);
     }
 }

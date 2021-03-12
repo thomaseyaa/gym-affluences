@@ -15,11 +15,11 @@ use App\Http\Controllers\Api;
 |
 */
 
-Route::get('/infos', [\App\Http\Controllers\Api::class, 'infos'])->name('api./infos');
+Route::get('/infos', [\App\Http\Controllers\Api::class, 'infos'])->name('api.infos');
 
 Route::post('/reservation', [\App\Http\Controllers\Api::class, 'reservation'])->name('api.reservation');
 
-Route::get('/cancel/{token}', [\App\Http\Controllers\Api::class, 'cancel'])->name('api.cancel');
+Route::delete('/cancel/{token}', [\App\Http\Controllers\Api::class, 'cancel'])->name('api.cancel');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
